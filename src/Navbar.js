@@ -15,36 +15,19 @@ const Navbar = () => {
         </div>
         <div className='links-container show-container'>
           <ul className='links'>
-            <li>
-              <a href='#1'>home</a>
-            </li>
-            <li>
-              <a href='#1'>about</a>
-            </li>
-            <li>
-              <a href='#1'>contact</a>
-            </li>
-            <li>
-              <a href='#1'>products</a>
-            </li>
+            {links.map((link) => (
+              <li key={link.id}>
+                <a href={link.url}>{link.text}</a>
+              </li>
+            ))}
           </ul>
         </div>
         <ul className='social-icons'>
-          <li>
-            <a href='https://twitter.com/' target='_blank' rel='noopener noreferrer'>
-              <FaTwitter />
-            </a>
-          </li>
-          <li>
-            <a href='https://twitter.com/' target='_blank' rel='noopener noreferrer'>
-              <FaTwitter />
-            </a>
-          </li>
-          <li>
-            <a href='https://twitter.com/' target='_blank' rel='noopener noreferrer'>
-              <FaTwitter />
-            </a>
-          </li>
+          {social.map((socialItem) => (
+            <li key={socialItem.id}>
+              <a href={socialItem.url}>{socialItem.icon}</a>
+            </li>
+          ))}
         </ul>
       </div>
     </nav>
