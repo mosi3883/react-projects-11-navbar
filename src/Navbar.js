@@ -14,17 +14,15 @@ const Navbar = () => {
             <FaBars />
           </button>
         </div>
-        {showLinks && (
-          <div className='links-container show-container'>
-            <ul className='links'>
-              {links.map((link) => (
-                <li key={link.id}>
-                  <a href={link.url}>{link.text}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
+        <div className={`links-container ${showLinks ? 'show-container' : ''}`}>
+          <ul className='links'>
+            {links.map((link) => (
+              <li key={link.id}>
+                <a href={link.url}>{link.text}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
         <ul className='social-icons'>
           {social.map((socialItem) => (
             <li key={socialItem.id}>
